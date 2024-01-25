@@ -1,0 +1,8 @@
+Software Test Life Cycle
+---------------------------------------------
+Requirement Analysis
+Test Planning 
+Test Case Developement 
+Enviroment Setup
+Test execution
+Test Case Closure
