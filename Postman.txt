@@ -1,0 +1,11 @@
+POSTMAN 
+______________________________
+
+GET: Request to read a web page.
+PUT: Request to store a web page.
+POST: Request append to a named resource.
+DELETE: Remove the web-page.
+TRACE: Echo the incoming request.
+HEAD: request to read a web page header.
+CONNECT: Reserved for future use.
+OPTIONS: Query for certain option.
