@@ -1,0 +1,19 @@
+AGILE
+-----------------
+
+User Stories
+Incremental Developement
+Daily Meeting 
+Iterative Developement
+Persona 
+Milestone Retrospective
+Teams
+_____________________________
+
+Product Backlog > 
+Sprint Planning > 
+Sprint Backlog > 2/4 week >
+Stand-up calls > 
+Sprint Review > 
+Incremental Developement > 
+Retrospective 
