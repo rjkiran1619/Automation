@@ -1,0 +1,53 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.time.Duration;
+
+public class EaseMyTripHotelBooking {
+    public static void main(String[] args) throws InterruptedException {
+        // Set up ChromeDriver
+        System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+
+        // Navigate to EaseMyTrip
+        driver.get("https://www.easemytrip.com/");
+
+        // Click on Hotels tab
+        driver.findElement(By.id("liHotel")).click();
+
+        // Enter city
+        WebElement cityInput = driver.findElement(By.id("txtCity"));
+        cityInput.clear();
+        cityInput.sendKeys("Bangalore");
+        Thread.sleep(2000); // wait for suggestions
+        driver.findElement(By.xpath("//li[contains(text(),'Bangalore')]")).click();
+
+        // Select Check-in date (10 April)
+        driver.findElement(By.id("txtCheckIn")).click();
+        driver.findElement(By.xpath("//td[@data-date='2026-04-10']")).click();
+
+        // Select Check-out date (14 April)
+        driver.findElement(By.id("txtCheckOut")).click();
+        driver.findElement(By.xpath("//td[@data-date='2026-04-14']")).click();
+
+        // Select Guests (2 Adults)
+        driver.findElement(By.id("divPax")).click();
+        WebElement adultPlus = driver.findElement(By.id("AdultsPlus"));
+        adultPlus.click(); // default is 1, so click once to make 2
+        driver.findElement(By.id("btnDonePax")).click();
+
+        // Click Search
+        driver.findElement(By.id("btnHotelSearch")).click();
+
+        // Wait and print results page title
+        Thread.sleep(5000);
+        System.out.println("Page Title: " + driver.getTitle());
+
+        // Close browser
+        driver.quit();
+    }
+}
+-----------------------------------
